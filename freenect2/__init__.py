@@ -184,7 +184,9 @@ class Device(object):
 
     """
 
-    def __init__(self, c_object=None):
+    def __init__(self, c_object=None, serial=None):
+        if serial is not None:
+            c_object = lib.freenect2_open_device_by_serial(_get_freenect2(), serial)
         if c_object is None:
             c_object = lib.freenect2_open_default_device(_get_freenect2())
         self._c_object = c_object
