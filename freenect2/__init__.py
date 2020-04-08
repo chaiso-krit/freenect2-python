@@ -323,6 +323,13 @@ class Device(object):
         yield self
         self.stop()
 
+    def set_color_auto_exposure(self, exposure_compensate):
+        """ Function for exposure setting, range between [-2.0,2.0]
+
+        """
+ 
+        lib.freenect2_device_set_color_auto_exposure(self._c_object, exposure_compensate)
+
     def __iter__(self):
         def iterator():
             while True:

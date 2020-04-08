@@ -112,6 +112,13 @@ static ColorCameraParams freenect2_device_get_color_camera_params(
     return device->getColorCameraParams();
 }
 
+static void freenect2_device_set_color_auto_exposure(
+    Freenect2DeviceRef device_ref, float exposure_compensation)
+{
+    Freenect2Device* device = reinterpret_cast<Freenect2Device*>(device_ref);
+    device->setColorAutoExposure(exposure_compensation);
+}
+
 typedef int (*Freenect2FrameListenerFunc) (
     Freenect2FrameType type, Freenect2FrameRef frame, void *user_data);
 

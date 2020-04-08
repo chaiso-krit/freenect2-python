@@ -91,6 +91,9 @@ IrCameraParams freenect2_device_get_ir_camera_params(
 ColorCameraParams freenect2_device_get_color_camera_params(
     Freenect2DeviceRef device_ref);
 
+void freenect2_device_set_color_auto_exposure(
+    Freenect2DeviceRef device_ref, float exposure_compensation);
+
 typedef int (*Freenect2FrameListenerFunc) (
     Freenect2FrameType type, Freenect2FrameRef frame, void *user_data);
 Freenect2FrameListenerRef freenect2_frame_listener_create(
