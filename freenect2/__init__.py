@@ -222,7 +222,7 @@ class Device(object):
 
     def stop(self):
         """Stop any running streams."""
-        lib.freenect2_device_stop(self._c_object)
+        return lib.freenect2_device_stop(self._c_object)
 
     def close(self):
         """Close the device and free any associated resources."""
